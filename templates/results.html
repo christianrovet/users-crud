@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>All My Friends</h1>
+    {% for one_friend in all_friends %}
+        <h3>Full Name: {{one_friend["first_name"]}} {{one_friend["last_name"]}}</h3>
+        <p>Occupation: {{one_friend["occupation"]}}</p>
+        <p>Actions</p><a href="/users/{{one_friend['id']}}">Show</a> | <a href="/edit_person/{{one_friend['id']}}">Edit</a> | <a href="/delete_person/{{one_friend['id']}}">Delete</a>
+        <hr>
+    {% endfor %}
+</body>
+</html>
